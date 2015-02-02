@@ -16,14 +16,14 @@ module.exports = (grunt) ->
 
     browserify:
       options :
-        transform        : [require('grunt-react').browserify]
+        transform        : ['reactify']
         browserifyOptions:
-          extensions: ['.jsx', '.js']
+          extensions: ['.jsx', '.js', '.json']
       server  :
         files  : [
           expand: true
           cwd: 'src'
-          src : ['js/*.{js,jsx}']
+          src : ['js/*.{js,jsx,json}']
           dest: '.server/'
           extDot: 'last'
           ext: '.js'
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'src'
-          src : ['js/*.{js,jsx}']
+          src : ['js/*.{js,jsx,json}']
           dest: '.building/'
           extDot: 'last'
           ext: '.js'
